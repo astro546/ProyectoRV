@@ -12,6 +12,7 @@ public class Ataud : MonoBehaviour
     public GameObject BabyObjectAtaud;
     public Baby BabyScript;
     public TextMeshProUGUI AtaudButtonText;
+    public bool firstPuzzleResolved = false;
     bool babyObtained;
     bool ataudReady = false;
     bool ataudOpen = false;
@@ -25,6 +26,7 @@ public class Ataud : MonoBehaviour
                 SetBaby();
                 AtaudButtonText.text = "Cerrar Ataud";
                 babyObtained = false;
+                firstPuzzleResolved = true;
             }
 
             if (babyObtained){
@@ -40,8 +42,7 @@ public class Ataud : MonoBehaviour
             ataudReady = false;
             ataudOpen = false;
             AtaudButtonText.text = "Abrir Ataud";
-        }
-        
+        }  
     }
 
     void SetBaby(){

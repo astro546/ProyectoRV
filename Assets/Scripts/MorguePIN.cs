@@ -8,7 +8,11 @@ using UnityEngine.EventSystems;
 public class MorguePIN : MonoBehaviour
 {
     public TextMeshProUGUI PINText;
+    public TextMeshProUGUI MorgueButtonText;
     public GameObject Corpse;
+    public GameObject MorgueButton;
+    public Transform Player;
+    public bool playerInMorgue = false;
 
     public void EnterNumber(){
         string buttonName = EventSystem.current.currentSelectedGameObject.name;
@@ -30,6 +34,26 @@ public class MorguePIN : MonoBehaviour
     public void closePIN(){
         PINText.text = "";
         this.gameObject.SetActive(false);
+        MorgueButton.SetActive(true);
+    }
+
+    public void openPIN(){
+        MorgueButton.SetActive(false);
+        this.gameObject.SetActive(true);
+    }
+
+    public void TeleportMorgue(){
+        Player.position = new Vector3(-1.835f, 1.867f, -1.53f);
+        playerInMorgue = true;
+    }
+
+    public void onClickMorgueButton(){
+        if (!playerInMorgue){
+            TeleportMorgue();
+            MorgueButtonText.text = "Insertar PIN";
+        } else {
+            openPIN();
+        }
     }
 
     IEnumerator sleep(){
