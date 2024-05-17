@@ -9,37 +9,44 @@ public class Ataud : MonoBehaviour
     public Transform ataudTop;
     public Transform BabyObject;
     public Transform AtaudObject;
+    public GameObject BabyObjectAtaud;
     public Baby BabyScript;
     public TextMeshProUGUI AtaudButtonText;
     bool babyObtained;
     bool ataudReady = false;
+    bool ataudOpen = false;
 
-    public void OpenAtaud(){
+    public void OpenCloseAtaud(){
         babyObtained = BabyScript.babyObtained;
-        ataudTop.localPosition = new Vector3(-0.3f, 0.8f, 1.0f);
+        if (!ataudOpen || ataudReady){
+            ataudTop.localPosition = new Vector3(-0.3f, 0.8f, 1.0f);
+            
+            if (ataudReady){
+                SetBaby();
+                AtaudButtonText.text = "Cerrar Ataud";
+                babyObtained = false;
+            }
 
-        if (ataudReady){
-            SetBaby();
-            AtaudButtonText.text = "Cerrar Ataud";
+            if (babyObtained){
+                AtaudButtonText.text = "Colocar Bebe";
+                ataudReady = true;
+            } else {
+                AtaudButtonText.text = "Cerrar Ataud";
+            }
+            ataudOpen = true;
+
+        } else if (!ataudReady) {
+            ataudTop.localPosition = new Vector3(-0.3f, 0.8f, -0.03f);
+            ataudReady = false;
+            ataudOpen = false;
+            AtaudButtonText.text = "Abrir Ataud";
         }
-
-        if (babyObtained){
-            AtaudButtonText.text = "Colocar Bebe";
-            ataudReady = true;
-        } else {
-            AtaudButtonText.text = "Cerrar Ataud";
-        }
-    }
-
-    public void CloseAtaud(){
-        ataudTop.localPosition = new Vector3(-0.3f, 0.8f, -0.03f);
-        ataudReady = false;
-        AtaudButtonText.text = "Abrir Ataud";
+        
     }
 
     void SetBaby(){
-        BabyObject.SetParent(AtaudObject);
-        BabyObject.localPosition = new Vector3(1.2f, 0.2f, -1.0f);
+        BabyObject.gameObject.SetActive(false);
+        BabyObjectAtaud.SetActive(true);
         ataudReady = false;
     }
 }
