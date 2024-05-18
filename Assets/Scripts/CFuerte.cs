@@ -16,6 +16,7 @@ public class CFuerte : MonoBehaviour
     public GameObject ZombieSleep;
     public GameObject Zombie;
     public GameObject GunShootButton;
+    public GameObject CanvasScene;
     public Transform GunObject;
     bool ThirdPuzzleResolved = false;
     bool cFuerteDoorOpen = false;
@@ -89,11 +90,18 @@ public class CFuerte : MonoBehaviour
         }
     }
 
+    void deactivateButtons(){
+        CanvasScene.transform.GetChild(0).gameObject.SetActive(false);
+        CanvasScene.transform.GetChild(2).gameObject.SetActive(false);
+        CanvasScene.transform.GetChild(4).gameObject.SetActive(false);
+    }
+
     public void getGun(){
         GunCamera.SetActive(true);
         GunObject.gameObject.SetActive(false);
         GunButton.SetActive(false);
         gunObtained = true;
+        deactivateButtons();
         GunShootButton.transform.parent.gameObject.SetActive(true);
         GunShootButton.SetActive(true);
         ZombieSleep.SetActive(false);
