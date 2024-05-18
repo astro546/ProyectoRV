@@ -13,6 +13,8 @@ public class CFuerte : MonoBehaviour
     public GameObject cFuerteDoor;
     public GameObject GunButton;
     public GameObject GunCamera;
+    public GameObject ZombieSleep;
+    public GameObject Zombie;
     public Transform GunObject;
     bool ThirdPuzzleResolved = false;
     bool cFuerteDoorOpen = false;
@@ -91,6 +93,8 @@ public class CFuerte : MonoBehaviour
         GunObject.gameObject.SetActive(false);
         GunButton.SetActive(false);
         gunObtained = true;
+        ZombieSleep.SetActive(false);
+        Zombie.SetActive(true);
     }
 
     IEnumerator sleep(){
