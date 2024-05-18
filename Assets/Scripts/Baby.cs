@@ -13,6 +13,7 @@ public class Baby : MonoBehaviour
     public void GetBaby(){
         BabyObject.gameObject.SetActive(false);
         BabyCam.SetActive(true);
+        BabyCam.GetComponent<AudioSource>().Play(0);
         BabyButton.SetActive(false);
         babyObtained = true;
     }
