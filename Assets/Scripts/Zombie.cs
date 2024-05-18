@@ -33,8 +33,9 @@ public class Zombie : MonoBehaviour
     {
         // Verifica si la animación del estado actual ha terminado
         AnimatorStateInfo stateInfo = enemyAnimator.GetCurrentAnimatorStateInfo(0); 
+        bool zombieDefeated = enemyAnimator.GetInteger("defeat") == 1;
         
-        if (!stateInfo.IsName("WakeUp"))
+        if (!stateInfo.IsName("WakeUp") && !zombieDefeated)
         {
             enemyAgent.destination = Player.position;
         }

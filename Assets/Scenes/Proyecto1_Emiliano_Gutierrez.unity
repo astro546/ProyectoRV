@@ -957,7 +957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &162061334
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5500,7 +5500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 179.3, y: 72}
+  m_AnchoredPosition: {x: 179.3, y: 47}
   m_SizeDelta: {x: 460.5, y: 51.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850572189
@@ -8091,6 +8091,7 @@ MonoBehaviour:
   GunCamera: {fileID: 919132147965516212}
   ZombieSleep: {fileID: 919132148353380612}
   Zombie: {fileID: 919132148925153698}
+  GunShootButton: {fileID: 162061333}
   GunObject: {fileID: 1031574128}
 --- !u!1 &1200685043
 GameObject:
@@ -16269,7 +16270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &919132148145517556
 GameObject:
   m_ObjectHideFlags: 0
