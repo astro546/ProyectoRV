@@ -18,7 +18,7 @@ public class Zombie : MonoBehaviour
         //Si el jugador le da 100 balazos al zombie, el zombie muere
         if (collision.gameObject.CompareTag("Bulet")){
             bulletHit++;
-            if (bulletHit == 10){
+            if (bulletHit == 50){
                 enemyAnimator.SetInteger("defeat", 1);
             }
         } 
