@@ -11,13 +11,13 @@ public class Teleport : MonoBehaviour
     public TextMeshProUGUI MorgueButtonText;
 
     public void TeleportRight(){
-        Player.position = new Vector3(-2.6f, 2.0f, 1.2f);
+        Player.position = new Vector3(-3.1f, 2.0f, -0.65f);
         MorgueScript.playerInMorgue = false;
         MorgueButtonText.text = "Ir a Morgue";
     }
 
     public void TeleportLeft(){
-        Player.position = new Vector3(1.5f, 1.9f, 1.4f);
+        Player.position = new Vector3(2.97f, 1.87f, -0.12f);
         MorgueScript.playerInMorgue = false;
         MorgueButtonText.text = "Ir a Morgue";
     }

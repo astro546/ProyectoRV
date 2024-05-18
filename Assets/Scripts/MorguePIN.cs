@@ -13,6 +13,7 @@ public class MorguePIN : MonoBehaviour
     public GameObject MorgueButton;
     public Transform Player;
     public bool playerInMorgue = false;
+    public bool secondPuzzleResolved = false;
 
     public void EnterNumber(){
         string buttonName = EventSystem.current.currentSelectedGameObject.name;
@@ -20,14 +21,16 @@ public class MorguePIN : MonoBehaviour
             PINText.text += buttonName;
         }
     }
+
     public void SendPIN(){
         if (PINText.text != "2907"){
             PINText.text = "Acceso Denegado";
-            sleep();
+            sleepCFuerte();
             PINText.text = "";
         } else {
             PINText.text = "Acceso Concedido";
             Corpse.SetActive(true);
+            secondPuzzleResolved = true;
         }
     }
 
@@ -56,7 +59,7 @@ public class MorguePIN : MonoBehaviour
         }
     }
 
-    IEnumerator sleep(){
+    IEnumerator sleepCFuerte(){
         yield return new WaitForSeconds(2);
     }
 }

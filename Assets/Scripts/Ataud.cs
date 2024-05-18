@@ -8,7 +8,6 @@ public class Ataud : MonoBehaviour
 {
     public Transform ataudTop;
     public Transform BabyObject;
-    public Transform AtaudObject;
     public GameObject BabyObjectAtaud;
     public Baby BabyScript;
     public TextMeshProUGUI AtaudButtonText;
